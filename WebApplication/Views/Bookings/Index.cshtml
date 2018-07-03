@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.payment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateBooked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourEvent.eventMonth)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateBooked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourEvent.eventMonth)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.bookingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.bookingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.bookingID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model WebApplication.Models.TourEvent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TourEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eventDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eventMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eventYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tour.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.eventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
